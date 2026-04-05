@@ -131,6 +131,23 @@
             transform: rotate(180deg);
             color: #e8308c;
         }
+
+        @keyframes emojiBounce {
+
+            0%,
+            100% {
+                transform: translateY(0) scale(1);
+            }
+
+            50% {
+                transform: translateY(-3px) scale(1.1);
+            }
+        }
+
+        .emoji-animate {
+            display: inline-block;
+            animation: emojiBounce 2s ease-in-out infinite;
+        }
     </style>
 </head>
 
@@ -382,24 +399,106 @@
         </div>
     </section>
 
+    <!-- SECCIÓN EMOJIS ANIMADOS (CARACTERÍSTICAS) -->
+    <section class="py-16 px-4 bg-cyber">
+        <div class="max-w-3xl mx-auto">
+            <p data-aos="fade-up"
+                class="text-lg md:text-2xl text-center text-gray-300 font-bold mb-10 max-w-2xl mx-auto">
+                La colección definitiva para impresión a pedido, camisetas, sudaderas y mercancía.
+                <strong class="text-neonPink">Uso comercial incluido.</strong>
+            </p>
+
+            <div class="space-y-4 text-left max-w-xl mx-auto">
+                <div data-aos="fade-up" data-aos-delay="50"
+                    class="flex items-start gap-4 p-5 rounded-2xl bg-darkCard border border-white/5 hover:border-white/20 transition-all shadow-lg shadow-black/50">
+                    <span class="text-3xl shrink-0 mt-0.5 emoji-animate">🎨</span>
+                    <div>
+                        <p class="font-black text-white text-base md:text-lg leading-snug">Compatible con sublimación,
+                            DTF, vinilo, serigrafía y más</p>
+                        <p class="text-sm text-gray-400 mt-1">Funciona con CUALQUIER técnica de impresión, sin importar
+                            tu equipo.</p>
+                    </div>
+                </div>
+                <!-- Característica 2 -->
+                <div data-aos="fade-up" data-aos-delay="100"
+                    class="flex items-start gap-4 p-5 rounded-2xl bg-darkCard border border-white/5 hover:border-white/20 transition-all shadow-lg shadow-black/50">
+                    <span class="text-3xl shrink-0 mt-0.5 emoji-animate">💎</span>
+                    <div>
+                        <p class="font-black text-white text-base md:text-lg leading-snug">Alta resolución real — sin
+                            píxeles, sin bordes cortados</p>
+                        <p class="text-sm text-gray-400 mt-1">Cada imagen está preparada para impresión profesional.
+                            Calidad que se nota.</p>
+                    </div>
+                </div>
+                <!-- Característica 3 -->
+                <div data-aos="fade-up" data-aos-delay="150"
+                    class="flex items-start gap-4 p-5 rounded-2xl bg-darkCard border border-white/5 hover:border-white/20 transition-all shadow-lg shadow-black/50">
+                    <span class="text-3xl shrink-0 mt-0.5 emoji-animate">⚡</span>
+                    <div>
+                        <p class="font-black text-white text-base md:text-lg leading-snug">Listo para usar hoy mismo —
+                            sin editar, sin perder tiempo</p>
+                        <p class="text-sm text-gray-400 mt-1">+45,000 archivos con fondo transparente. Descarga y
+                            empieza a vender.</p>
+                    </div>
+                </div>
+                <!-- Característica 4 -->
+                <div data-aos="fade-up" data-aos-delay="200"
+                    class="flex items-start gap-4 p-5 rounded-2xl bg-darkCard border border-white/5 hover:border-white/20 transition-all shadow-lg shadow-black/50">
+                    <span class="text-3xl shrink-0 mt-0.5 emoji-animate">👕</span>
+                    <div>
+                        <p class="font-black text-white text-base md:text-lg leading-snug">Ideal para camisetas, tazas,
+                            termos, mochilas, fundas y lo que imagines</p>
+                        <p class="text-sm text-gray-400 mt-1">Diseños versátiles que se adaptan a cualquier producto y
+                            nicho.</p>
+                    </div>
+                </div>
+                <!-- Característica 5 -->
+                <div data-aos="fade-up" data-aos-delay="250"
+                    class="flex items-start gap-4 p-5 rounded-2xl bg-darkCard border border-white/5 hover:border-white/20 transition-all shadow-lg shadow-black/50">
+                    <span class="text-3xl shrink-0 mt-0.5 emoji-animate">🕐</span>
+                    <div>
+                        <p class="font-black text-white text-base md:text-lg leading-snug">Ahorra 500+ horas de trabajo
+                            con +45,000 personajes organizados</p>
+                        <p class="text-sm text-gray-400 mt-1">Todo clasificado, todo al alcance. Directo al grano.</p>
+                    </div>
+                </div>
+                <!-- Característica 6 -->
+                <div data-aos="fade-up" data-aos-delay="300"
+                    class="flex items-start gap-4 p-5 rounded-2xl bg-darkCard border border-white/5 hover:border-white/20 transition-all shadow-lg shadow-black/50">
+                    <span class="text-3xl shrink-0 mt-0.5 emoji-animate">🛠️</span>
+                    <div>
+                        <p class="font-black text-white text-base md:text-lg leading-snug">Formatos editables incluidos
+                            — PNG, PSD, PDF, AI y más</p>
+                        <p class="text-sm text-gray-400 mt-1">Máxima flexibilidad para personalizar cada diseño a tu
+                            gusto.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- SECCIÓN 4: PRUEBA SOCIAL -->
     <section class="py-20 px-4 bg-darkBg border-y border-white/5">
         <div class="max-w-5xl mx-auto">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16 text-center">
                 <div data-aos="fade-up" data-aos-delay="0">
-                    <div class="text-4xl md:text-5xl font-black text-white mb-2">45k+</div>
+                    <div class="text-4xl md:text-5xl font-black text-white mb-2"><span class="count-up"
+                            data-to="45">0</span>k+</div>
                     <div class="text-neonPink font-bold text-sm uppercase tracking-wide">Archivos HD</div>
                 </div>
                 <div data-aos="fade-up" data-aos-delay="100">
-                    <div class="text-4xl md:text-5xl font-black text-white mb-2">1,850+</div>
+                    <div class="text-4xl md:text-5xl font-black text-white mb-2"><span class="count-up"
+                            data-to="1850">0</span>+</div>
                     <div class="text-neonPink font-bold text-sm uppercase tracking-wide">Clientes</div>
                 </div>
                 <div data-aos="fade-up" data-aos-delay="200">
-                    <div class="text-4xl md:text-5xl font-black text-white mb-2">4.9/5</div>
+                    <div class="text-4xl md:text-5xl font-black text-white mb-2"><span class="count-up"
+                            data-to="4.9">0.0</span>/5</div>
                     <div class="text-neonPink font-bold text-sm uppercase tracking-wide">Calificación</div>
                 </div>
                 <div data-aos="fade-up" data-aos-delay="300">
-                    <div class="text-4xl md:text-5xl font-black text-white mb-2">30GB</div>
+                    <div class="text-4xl md:text-5xl font-black text-white mb-2"><span class="count-up"
+                            data-to="30">0</span>GB</div>
                     <div class="text-neonPink font-bold text-sm uppercase tracking-wide">De Contenido</div>
                 </div>
             </div>
@@ -692,6 +791,40 @@
         AOS.init({ once: true, offset: 50, duration: 800 });
 
         function startCountdown() {
+            // Observer para animación progresiva de números
+            const countUpObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const el = entry.target;
+                        const target = parseFloat(el.getAttribute('data-to'));
+                        const isDecimal = el.getAttribute('data-to').includes('.');
+                        const duration = 2000;
+                        const frameRate = 30;
+                        const totalFrames = Math.round(duration / frameRate);
+                        let frame = 0;
+                        const increment = target / totalFrames;
+
+                        const counter = setInterval(() => {
+                            frame++;
+                            const current = increment * frame;
+                            if (isDecimal) {
+                                el.textContent = current.toFixed(1);
+                            } else {
+                                el.textContent = Math.round(current);
+                            }
+
+                            if (frame >= totalFrames) {
+                                el.textContent = target;
+                                clearInterval(counter);
+                            }
+                        }, frameRate);
+                        observer.unobserve(el);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            document.querySelectorAll('.count-up').forEach(el => countUpObserver.observe(el));
+
             const timerElement = document.getElementById('countdown-timer');
             if (!timerElement) return;
             let totalSeconds = (14 * 60) + 40;
