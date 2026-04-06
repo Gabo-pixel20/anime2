@@ -194,7 +194,7 @@
                     Calidad Real
                 </div>
 
-                <video autoplay loop muted playsinline
+                <video autoplay loop muted playsinline preload="metadata"
                     class="w-full h-full object-cover relative z-10 opacity-90 hover:opacity-100 transition-opacity">
                     <source src="https://d1yei2z3i6k35z.cloudfront.net/13578013/69cada5a6a4e39.17920112_Camiseta.mp4"
                         type="video/mp4">
@@ -342,9 +342,9 @@
                     <span class="w-2 h-2 rounded-full bg-neonCyan animate-ping"></span> Detalle 100% Real
                 </div>
 
-                <video autoplay loop muted playsinline
-                    class="w-full h-full object-cover relative z-10 transition-transform duration-700 hover:scale-105">
-                    <source src="https://d1yei2z3i6k35z.cloudfront.net/13578013/69cada5a508007.88337617_Baki.mp4"
+                <video muted loop playsinline preload="none"
+                    class="lazy-video w-full h-full object-cover relative z-10 transition-transform duration-700 hover:scale-105">
+                    <source data-src="https://d1yei2z3i6k35z.cloudfront.net/13578013/69cada5a508007.88337617_Baki.mp4"
                         type="video/mp4">
                 </video>
             </div>
@@ -856,9 +856,11 @@
     </script>
 
     <!-- Scripts base integrados de index.html -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
     <script>
-        AOS.init({ once: true, offset: 50, duration: 800 });
+        window.addEventListener('load', () => {
+            AOS.init({ once: true, offset: 50, duration: 800 });
+        });
 
         function startCountdown() {
             // Observer para animación progresiva de números
@@ -946,6 +948,30 @@
                 const nextTime = Math.floor(Math.random() * 15000) + 10000;
                 setTimeout(loop, nextTime);
             }, 8000);
+        });
+
+        // --- Video Lazy Loading optimization para PageSpeed ---
+        document.addEventListener("DOMContentLoaded", function () {
+            const lazyVideos = document.querySelectorAll("video.lazy-video");
+            if ("IntersectionObserver" in window) {
+                const lazyVideoObserver = new IntersectionObserver(function (entries, observer) {
+                    entries.forEach(function (video) {
+                        if (video.isIntersecting) {
+                            for (let source in video.target.children) {
+                                let videoSource = video.target.children[source];
+                                if (typeof videoSource.tagName === "string" && videoSource.tagName === "SOURCE") {
+                                    videoSource.src = videoSource.dataset.src;
+                                }
+                            }
+                            video.target.load();
+                            video.target.autoplay = true;
+                            video.target.play();
+                            lazyVideoObserver.unobserve(video.target);
+                        }
+                    });
+                }, { threshold: 0.1 });
+                lazyVideos.forEach(lazyVideo => lazyVideoObserver.observe(lazyVideo));
+            }
         });
     </script>
 </body>
